@@ -1,0 +1,40 @@
+.root {
+    align-items: center;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    height: 36px;
+    justify-content: center;
+    line-height: 20px;
+    padding: 8px 12px;
+    text-align: center;
+    width: 100%;
+}
+
+.primary {
+    background-color: #0d28a6;
+    color: #fff;
+}
+
+.primary-outlined {
+    @extend .primary;
+    background-color: #fff;
+    border: 1px solid #0d28a6;
+    color: #0d28a6;
+}
+
+.secondary {
+    background-color: #5cb85f;
+    color: #fff;
+    padding: 14px 12px;
+}
+
+.secondary-outlined {
+    @extend .secondary;
+    background-color: #fff;
+    border: 1px solid #fa2c5a;
+    color: #fa2c5a;
+}
