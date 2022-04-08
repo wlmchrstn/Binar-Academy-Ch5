@@ -24,8 +24,10 @@ const Search = ({ setHero }) => {
 
     const fetchData = async (params) => {
         try {
+            if (params.driver === 'Pilih Tipe Driver') return null;
             const { data: response } = await axios.get(`${baseUrl}/admin/car`);
             const filteredResponse = response.filter((e) => {
+                if (params.driver === 'Dengan Sopir') return e.status === true;
                 return e.status === false;
             });
             setData(filteredResponse);
