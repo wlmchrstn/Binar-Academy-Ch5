@@ -14,12 +14,14 @@ import Card from '../../components/card/card';
 import users from '../../assets/icons/fi_users.svg';
 import settings from '../../assets/icons/fi_settings.svg';
 import calendar from '../../assets/icons/fi_calendar.svg';
+import chevron from '../../assets/icons/fi_chevron-up.svg';
 
 const Search = ({ setHero }) => {
     const { register, handleSubmit } = useForm();
     const [step,setStep] = useState('home');
     const [data,setData] = useState(null);
     const [detail,setDetail] = useState(null);
+    const [accordion,setAccordion] = useState(false);
     const baseUrl = 'https://rent-cars-api.herokuapp.com';
 
     const fetchData = async (params) => {
@@ -95,40 +97,46 @@ const Search = ({ setHero }) => {
                                 {'Tidak termasuk akomodasi penginapan'}
                             </li>
                         </ul>
-                        <div style={{ marginBottom: '16px' }}>
+                        <div className={styles['detail-accordion']} onClick={() => setAccordion(!accordion)}>
                             <Paragraph variant={'body-1'} weight={'bold'} color={'black'}>
                                 {'Refund, Reschedule, Overtime'}
+                                {accordion}
                             </Paragraph>
+                            <div className={classNames(styles['detail-accordion-image'], accordion ? styles['detail-accordion-rotate'] : '')}>
+                                <img src={chevron} alt={'fi_chevron'} />
+                            </div>
                         </div>
-                        <ul>
-                            <li>
-                                {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
-                            </li>
-                            <li>
-                                {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
-                            </li>
-                            <li>
-                                {'Tidak termasuk akomodasi penginapan'}
-                            </li>
-                            <li>
-                                {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
-                            </li>
-                            <li>
-                                {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
-                            </li>
-                            <li>
-                                {'Tidak termasuk akomodasi penginapan'}
-                            </li>
-                            <li>
-                                {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
-                            </li>
-                            <li>
-                                {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
-                            </li>
-                            <li>
-                                {'Tidak termasuk akomodasi penginapan'}
-                            </li>
-                        </ul>
+                        <div className={classNames(styles['detail-list'], accordion ? styles['detail-accordion-open'] : '')}>
+                            <ul>
+                                <li>
+                                    {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
+                                </li>
+                                <li>
+                                    {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
+                                </li>
+                                <li>
+                                    {'Tidak termasuk akomodasi penginapan'}
+                                </li>
+                                <li>
+                                    {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
+                                </li>
+                                <li>
+                                    {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
+                                </li>
+                                <li>
+                                    {'Tidak termasuk akomodasi penginapan'}
+                                </li>
+                                <li>
+                                    {'Tidak termasuk biaya makan sopir Rp 75.000/hari'}
+                                </li>
+                                <li>
+                                    {'Jika overtime lebih dari 12 jam akan ada tambahan biaya Rp 20.000/jam'}
+                                </li>
+                                <li>
+                                    {'Tidak termasuk akomodasi penginapan'}
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div className={styles.card}>
                         <div className={styles['card-image']}>
