@@ -10,13 +10,14 @@
 }
 
 .image {
-    position: relative;
     box-sizing: border-box;
+    display: flex;
     height: 190px;
     margin-bottom: 16px;
+    overflow: hidden;
     padding: 16px;
+    position: relative;
     width: 285px;
-    display: flex;
 
     img {
         align-self: center;

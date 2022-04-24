@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import axios from 'axios';
 import { formatRupiah } from '../../utils/helper';
 import styles from './card.module.scss';
 
@@ -13,23 +11,10 @@ import Button from '../button/button';
 import users from '../../assets/icons/fi_users.svg';
 import settings from '../../assets/icons/fi_settings.svg';
 import calendar from '../../assets/icons/fi_calendar.svg';
+import { useNavigate } from 'react-router-dom';
 
-const Card = ({ id, name, category, price, image, step, detail }) => {
-    const baseUrl = 'https://rent-cars-api.herokuapp.com';
-
-    const getDetail = (params) => {
-        const fetchDetail = async () => {
-            try {
-                const { data: response } = await axios.get(`${baseUrl}/admin/car/${params}`);
-                detail(response);
-                step('detail');
-            } catch(err) {
-                console.log(err);
-            };
-        };
-
-        fetchDetail();
-    };
+const Card = ({ id, name, category, price, image }) => {
+    const navigate = useNavigate();
 
     return (
         <div className={styles.root}>
@@ -68,7 +53,7 @@ const Card = ({ id, name, category, price, image, step, detail }) => {
                 </div>
             </div>
             <div className={styles.button}>
-                <Button variant={'secondary'} type={'button'} onClick={() => getDetail(id)} >
+                <Button variant={'secondary'} type={'button'} onClick={() => navigate(`/search/${id}`)} >
                     {'Pilih Mobil'}
                 </Button>
             </div>

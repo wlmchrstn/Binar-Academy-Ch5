@@ -1,0 +1,121 @@
+.root {
+    margin: 40px auto 0;
+    max-width: 1047px;
+    width: 100%;
+}
+
+.detail-wrapper {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.detail {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    width: 605px;
+    height: 100%;
+
+    ul {
+        list-style: unset;
+        margin-left: 16px;
+    }
+
+    li {
+        font-size: 14px;
+        line-height: 24.5px;
+        color: #8a8a8a;
+        font-weight: 300;
+    }
+
+    &-accordion {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 24px;
+        cursor: pointer;
+
+        &-image {
+            transition: all .1s linear;
+            transform: rotate(180deg);
+        }
+
+        &-rotate {
+            transform: rotate(0);
+        }
+    }
+
+    &-list {
+        height: 0;
+        overflow: hidden;
+        transition: all .1s linear;
+    }
+}
+
+.detail-accordion-open {
+    margin-top: 14px;
+    height: 220.5px;
+}
+
+.card {
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    width: 405px;
+    padding: 0 24px 24px;
+    margin-left: 32px;
+    max-height: 435px;
+}
+
+.card-image {
+    padding: 28px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        align-self: center;
+        height: 160px;
+    }
+}
+
+.card-list {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 49px;
+}
+
+.card-list > :not(:last-child) {
+    margin-right: 16px;
+}
+
+.card-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        margin-right: 4px;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}

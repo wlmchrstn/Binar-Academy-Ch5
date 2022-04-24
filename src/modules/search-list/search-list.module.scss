@@ -1,0 +1,9 @@
+.root {
+    column-gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 40px auto 0;
+    max-width: 1047px;
+    row-gap: 24px;
+    width: 100%;
+}
